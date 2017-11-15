@@ -11,7 +11,7 @@ import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNotNull
 import org.junit.Test
 
-class Test {
+class ParsingHtmlTest {
 
     companion object {
         private const val MOVIES_URL = "http://www.mymovies.it/cinema/bologna/"
@@ -19,14 +19,12 @@ class Test {
         private const val MOVIE_TITLE_ID = "div.div_titolo_film"
     }
 
-    @Test
-    fun downloadHtml() {
+    @Test fun downloadHtml() {
         val document: Document = fetchHtmlDocument()
 
         assertNotNull(document)
 
-        val movie: Element = document.select(MOVIE_ID)
-                .first()
+        val movie: Element = document.select(MOVIE_ID).first()
         val movieTitle = movie.select(MOVIE_TITLE_ID).first().select("a").attr("title")
         assertNotNull(movieTitle)
         assertEquals("Paddington 2", movieTitle)
@@ -35,8 +33,7 @@ class Test {
         assertEquals("http://pad.mymovies.it/filmclub/2016/10/088/locandina.jpg", movieUrl)
     }
 
-    @Test
-    fun downloadMovies() {
+    @Test fun downloadMovies() {
         val document: Document = fetchHtmlDocument()
 
         val movies: Elements = document.select(MOVIE_ID)
