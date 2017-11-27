@@ -1,5 +1,6 @@
 package com.generals.movies
 
+import com.generals.movies.movielist.model.Movie
 import okhttp3.OkHttpClient
 import okhttp3.Request
 import okhttp3.Response
@@ -25,20 +26,30 @@ class ParsingHtmlTest {
         assertNotNull(document)
 
         val movie: Element = document.select(MOVIE_ID).first()
-        val movieTitle = movie.select(MOVIE_TITLE_ID).first().select("a").attr("title")
+        val movieTitle = movie.select(MOVIE_TITLE_ID).select("a").attr("title")
         assertNotNull(movieTitle)
-        assertEquals("Paddington 2", movieTitle)
+        assertEquals("Gli sdraiati", movieTitle)
 
         val movieUrl: String = movie.select("img").select("[alt=$movieTitle]").attr("src")
-        assertEquals("http://pad.mymovies.it/filmclub/2016/10/088/locandina.jpg", movieUrl)
+        assertEquals("http://pad.mymovies.it/filmclub/2017/06/173/locandina.jpg", movieUrl)
     }
 
     @Test fun downloadMovies() {
         val document: Document = fetchHtmlDocument()
 
         val movies: Elements = document.select(MOVIE_ID)
-        assertEquals(32, movies.size)
+        assertEquals(30, movies.size)
+
+        val movieList: List<Movie> = movies.filter {
+            extractMovieTitle(it).isNotEmpty()
+        }.map {
+            val title = extractMovieTitle(it)
+            Movie(title, it.select("img").select("[alt=$title]").attr("src"))
+        }
+        assertEquals(26, movieList.size)
     }
+
+    private fun extractMovieTitle(element: Element) = element.select(MOVIE_TITLE_ID).select("a").attr("title")
 
     private fun fetchHtmlDocument(): Document {
         val okHttpClient = OkHttpClient()

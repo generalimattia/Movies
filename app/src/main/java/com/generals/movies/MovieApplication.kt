@@ -2,8 +2,8 @@ package com.generals.movies
 
 import android.app.Application
 import android.content.Context
-import com.generals.movies.dependencyinjection.ApplicationComponent
-import com.generals.movies.dependencyinjection.DaggerApplicationComponent
+import com.generals.movies.core.dependencyinjection.ApplicationComponent
+import com.generals.movies.core.dependencyinjection.DaggerApplicationComponent
 
 class MovieApplication : Application() {
 
