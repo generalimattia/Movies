@@ -1,4 +1,4 @@
-package com.generals.movies.movielist.view
+package com.generals.movies.movielist.mvp.view
 
 import android.graphics.drawable.Drawable
 import android.support.v7.widget.RecyclerView
@@ -12,7 +12,7 @@ import com.bumptech.glide.request.RequestListener
 import com.bumptech.glide.request.RequestOptions
 import com.bumptech.glide.request.target.Target
 import com.generals.movies.R
-import com.generals.movies.movielist.model.Movie
+import com.generals.movies.movielist.mvp.model.Movie
 import kotlinx.android.synthetic.main.widget_movie_item.view.*
 
 class MovieAdapter(val movieList: List<Movie>) : RecyclerView.Adapter<MovieAdapter.MovieViewHolder>() {

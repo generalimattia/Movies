@@ -1,4 +1,4 @@
-package com.generals.movies.movielist.view
+package com.generals.movies.movielist.mvp.view
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
@@ -7,8 +7,8 @@ import android.view.View
 import android.widget.Toast
 import com.generals.movies.MovieApplication
 import com.generals.movies.R
-import com.generals.movies.movielist.model.Movie
-import com.generals.movies.movielist.presenter.MoviesPresenter
+import com.generals.movies.movielist.mvp.model.Movie
+import com.generals.movies.movielist.mvp.presenter.MoviesPresenter
 import kotlinx.android.synthetic.main.activity_movie_list.*
 import javax.inject.Inject
 

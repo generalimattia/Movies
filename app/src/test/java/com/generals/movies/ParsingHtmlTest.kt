@@ -1,6 +1,6 @@
 package com.generals.movies
 
-import com.generals.movies.movielist.model.Movie
+import com.generals.movies.movielist.mvp.model.Movie
 import okhttp3.OkHttpClient
 import okhttp3.Request
 import okhttp3.Response

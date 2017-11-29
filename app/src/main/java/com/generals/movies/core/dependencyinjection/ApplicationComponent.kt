@@ -1,6 +1,6 @@
 package com.generals.movies.core.dependencyinjection
 
-import com.generals.movies.movielist.view.MovieListActivity
+import com.generals.movies.movielist.mvp.view.MovieListActivity
 import dagger.Component
 import javax.inject.Singleton
 
