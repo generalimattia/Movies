@@ -28,6 +28,7 @@ class MoviesPresenterImpl @Inject constructor(private val okHttpClient: OkHttpCl
     private var moviesDisposable: Disposable? = null
 
     override fun presentView() {
+        ifIsViewAttached { showLoading() }
         moviesDisposable = Observable.create { emitter: ObservableEmitter<List<Movie>> ->
             try {
                 val request = Request.Builder().url(MOVIES_URL).build()
@@ -40,7 +41,11 @@ class MoviesPresenterImpl @Inject constructor(private val okHttpClient: OkHttpCl
                     extractMovieTitle(it).isNotEmpty()
                 }.map {
                     val title = extractMovieTitle(it)
-                    Movie(title, it.select("img").select("[alt=$title]").attr("src"))
+                    try {
+                        Movie(title, it.select("img").select("[alt=$title]").attr("src"))
+                    } catch (e: Exception) {
+                        Movie(title, null)
+                    }
                 }
                 emitter.onNext(movieList)
                 emitter.onComplete()

@@ -3,7 +3,7 @@ package com.generals.movies.movielist.model
 import android.os.Parcel
 import android.os.Parcelable
 
-data class Movie(val title: String, val imageUrl: String) : Parcelable {
+data class Movie(val title: String, val imageUrl: String?) : Parcelable {
 
     constructor(source: Parcel) : this(source.readString(), source.readString())
 

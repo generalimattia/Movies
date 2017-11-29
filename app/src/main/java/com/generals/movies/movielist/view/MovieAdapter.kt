@@ -34,29 +34,34 @@ class MovieAdapter(val movieList: List<Movie>) : RecyclerView.Adapter<MovieAdapt
     }
 
     class MovieViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+
         fun bind(movie: Movie) {
-            itemView.image_loader.visibility = View.VISIBLE
-            itemView.movie_image.contentDescription = movie.title
 
-            Glide.with(itemView.context).load(movie.imageUrl).listener(object : RequestListener<Drawable> {
+            movie.imageUrl?.let {
+                itemView.image_loader.visibility = View.VISIBLE
+                itemView.movie_image.contentDescription = movie.title
 
-                override fun onResourceReady(resource: Drawable?,
-                                             model: Any?,
-                                             target: Target<Drawable>?,
-                                             dataSource: DataSource?,
-                                             isFirstResource: Boolean): Boolean {
-                    itemView.image_loader.visibility = View.GONE
-                    return false
-                }
+                Glide.with(itemView.context).load(movie.imageUrl).listener(object : RequestListener<Drawable> {
 
-                override fun onLoadFailed(e: GlideException?,
-                                          model: Any?,
-                                          target: Target<Drawable>?,
-                                          isFirstResource: Boolean): Boolean {
-                    itemView.image_loader.visibility = View.GONE
-                    return false
-                }
-            }).apply(RequestOptions.centerCropTransform()).into(itemView.movie_image)
+                    override fun onResourceReady(resource: Drawable?,
+                                                 model: Any?,
+                                                 target: Target<Drawable>?,
+                                                 dataSource: DataSource?,
+                                                 isFirstResource: Boolean): Boolean {
+                        itemView.image_loader.visibility = View.GONE
+                        return false
+                    }
+
+                    override fun onLoadFailed(e: GlideException?,
+                                              model: Any?,
+                                              target: Target<Drawable>?,
+                                              isFirstResource: Boolean): Boolean {
+                        itemView.image_loader.visibility = View.GONE
+                        return false
+                    }
+                }).apply(RequestOptions.centerCropTransform())
+                        .into(itemView.movie_image)
+            }
         }
     }
 

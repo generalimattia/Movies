@@ -28,25 +28,30 @@ class ParsingHtmlTest {
         val movie: Element = document.select(MOVIE_ID).first()
         val movieTitle = movie.select(MOVIE_TITLE_ID).select("a").attr("title")
         assertNotNull(movieTitle)
-        assertEquals("Gli sdraiati", movieTitle)
+        assertEquals("Amori che non sanno stare al mondo", movieTitle)
 
         val movieUrl: String = movie.select("img").select("[alt=$movieTitle]").attr("src")
-        assertEquals("http://pad.mymovies.it/filmclub/2017/06/173/locandina.jpg", movieUrl)
+        assertEquals("http://pad.mymovies.it/filmclub/2016/10/118/locandina.jpg", movieUrl)
     }
 
     @Test fun downloadMovies() {
         val document: Document = fetchHtmlDocument()
+        document.outputSettings().charset("ASCII")
 
         val movies: Elements = document.select(MOVIE_ID)
-        assertEquals(30, movies.size)
+        assertEquals(28, movies.size)
 
         val movieList: List<Movie> = movies.filter {
             extractMovieTitle(it).isNotEmpty()
         }.map {
             val title = extractMovieTitle(it)
-            Movie(title, it.select("img").select("[alt=$title]").attr("src"))
+            try {
+                Movie(title, it.select("img").select("[alt=$title]").attr("src"))
+            } catch (e: Exception) {
+                Movie(title, null)
+            }
         }
-        assertEquals(26, movieList.size)
+        assertEquals(24, movieList.size)
     }
 
     private fun extractMovieTitle(element: Element) = element.select(MOVIE_TITLE_ID).select("a").attr("title")
