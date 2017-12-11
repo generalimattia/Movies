@@ -1,7 +1,7 @@
 package com.generals.movies.core.dependencyinjection
 
-import com.generals.movies.movielist.databinding.viewmodel.MovieListViewModel
-import com.generals.movies.movielist.databinding.viewmodel.MovieListViewModelImpl
+import com.generals.movies.movielist.mvvm.viewmodel.MovieListViewModel
+import com.generals.movies.movielist.mvvm.viewmodel.MovieListViewModelImpl
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton

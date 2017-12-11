@@ -1,4 +1,4 @@
-package com.generals.movies.movielist.databinding
+package com.generals.movies.movielist.mvvm
 
 import android.databinding.BindingAdapter
 import android.widget.ImageView

@@ -1,4 +1,4 @@
-package com.generals.movies.movielist.databinding.viewmodel
+package com.generals.movies.movielist.mvvm.viewmodel
 
 import android.databinding.BaseObservable
 import android.databinding.ObservableArrayList

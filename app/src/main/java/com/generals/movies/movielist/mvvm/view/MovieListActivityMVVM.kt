@@ -1,4 +1,4 @@
-package com.generals.movies.movielist.databinding.view
+package com.generals.movies.movielist.mvvm.view
 
 import android.databinding.DataBindingUtil
 import android.os.Bundle
@@ -6,11 +6,11 @@ import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.GridLayoutManager
 import com.generals.movies.MovieApplication
 import com.generals.movies.R
-import com.generals.movies.databinding.ActivityMovieListDataBindingBinding
-import com.generals.movies.movielist.databinding.viewmodel.MovieListViewModel
+import com.generals.movies.databinding.ActivityMovieListMvvmBinding
+import com.generals.movies.movielist.mvvm.viewmodel.MovieListViewModel
 import javax.inject.Inject
 
-class MovieListActivityDataBinding : AppCompatActivity() {
+class MovieListActivityMVVM : AppCompatActivity() {
 
     @Inject lateinit var viewModel: MovieListViewModel
 
@@ -19,8 +19,8 @@ class MovieListActivityDataBinding : AppCompatActivity() {
 
         MovieApplication.getApplicationComponent(this).inject(this)
 
-        val binding: ActivityMovieListDataBindingBinding = DataBindingUtil.setContentView(this,
-                                                                                          R.layout.activity_movie_list_data_binding)
+        val binding: ActivityMovieListMvvmBinding = DataBindingUtil.setContentView(this,
+                                                                                   R.layout.activity_movie_list_mvvm)
         binding.viewModel = viewModel
         binding.movieList.layoutManager = GridLayoutManager(this, 2)
 

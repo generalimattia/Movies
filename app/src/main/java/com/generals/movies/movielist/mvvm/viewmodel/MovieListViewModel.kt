@@ -1,4 +1,4 @@
-package com.generals.movies.movielist.databinding.viewmodel
+package com.generals.movies.movielist.mvvm.viewmodel
 
 import android.databinding.*
 import com.generals.movies.movielist.mvp.model.Movie
