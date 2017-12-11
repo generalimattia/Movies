@@ -17,7 +17,7 @@ import org.jsoup.nodes.Element
 import org.jsoup.select.Elements
 import javax.inject.Inject
 
-class MoviesPresenterImpl @Inject constructor(private val okHttpClient: OkHttpClient) : MoviesPresenter, BasePresenter<MovieListView>() {
+class MovieListPresenterImpl @Inject constructor(private val okHttpClient: OkHttpClient) : MovieListPresenter, BasePresenter<MovieListView>() {
 
     companion object {
         private const val MOVIES_URL = "http://www.mymovies.it/cinema/bologna/"

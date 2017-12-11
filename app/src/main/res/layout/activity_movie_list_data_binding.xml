@@ -4,12 +4,15 @@
         xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+        <variable
+            name="viewModel"
+            type="com.generals.movies.movielist.databinding.viewmodel.MovieListViewModel"/>
     </data>
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context="com.generals.movies.movielist.databinding.view.MovieListActivity">
+        tools:context="com.generals.movies.movielist.databinding.view.MovieListActivityDataBinding">
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/movie_list"
@@ -19,7 +22,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:listitem="@layout/widget_movie_item"/>
+            app:items="@{viewModel.getItems()}"
+            tools:listitem="@layout/widget_movie_item_mvp"/>
 
         <ProgressBar
             android:id="@+id/movie_list_loader"
@@ -29,7 +33,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:visibility="gone"/>
+            android:visibility="@{viewModel.getProgressBarVisibility()}"/>
 
     </android.support.constraint.ConstraintLayout>
 </layout>

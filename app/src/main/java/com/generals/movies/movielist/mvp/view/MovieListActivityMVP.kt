@@ -8,17 +8,17 @@ import android.widget.Toast
 import com.generals.movies.MovieApplication
 import com.generals.movies.R
 import com.generals.movies.movielist.mvp.model.Movie
-import com.generals.movies.movielist.mvp.presenter.MoviesPresenter
-import kotlinx.android.synthetic.main.activity_movie_list.*
+import com.generals.movies.movielist.mvp.presenter.MovieListPresenter
+import kotlinx.android.synthetic.main.activity_movie_list_mvp.*
 import javax.inject.Inject
 
-class MovieListActivity : AppCompatActivity(), MovieListView {
+class MovieListActivityMVP : AppCompatActivity(), MovieListView {
 
-    @Inject lateinit var presenter: MoviesPresenter
+    @Inject lateinit var presenter: MovieListPresenter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_movie_list)
+        setContentView(R.layout.activity_movie_list_mvp)
 
         MovieApplication.getApplicationComponent(this).inject(this)
 
@@ -33,13 +33,13 @@ class MovieListActivity : AppCompatActivity(), MovieListView {
 
     override fun onMovieListLoaded(movieList: List<Movie>) {
         movie_list_loader.visibility = View.GONE
-        movie_list.layoutManager = GridLayoutManager(this@MovieListActivity, 2)
-        movie_list.adapter = MovieAdapter(movieList)
+        movie_list.layoutManager = GridLayoutManager(this@MovieListActivityMVP, 2)
+        movie_list.adapter = MovieAdapterMVP(movieList)
     }
 
     override fun onError(e: Throwable) {
         movie_list_loader.visibility = View.GONE
-        Toast.makeText(this@MovieListActivity,
+        Toast.makeText(this@MovieListActivityMVP,
                        "Error while downloading movies",
                        Toast.LENGTH_LONG).show()
     }

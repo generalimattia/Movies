@@ -28,10 +28,10 @@ class ParsingHtmlTest {
         val movie: Element = document.select(MOVIE_ID).first()
         val movieTitle = movie.select(MOVIE_TITLE_ID).select("a").attr("title")
         assertNotNull(movieTitle)
-        assertEquals("Amori che non sanno stare al mondo", movieTitle)
+        assertEquals("Suburbicon", movieTitle)
 
         val movieUrl: String = movie.select("img").select("[alt=$movieTitle]").attr("src")
-        assertEquals("http://pad.mymovies.it/filmclub/2016/10/118/locandina.jpg", movieUrl)
+        assertEquals("http://pad.mymovies.it/filmclub/2016/09/129/locandina.jpg", movieUrl)
     }
 
     @Test fun downloadMovies() {

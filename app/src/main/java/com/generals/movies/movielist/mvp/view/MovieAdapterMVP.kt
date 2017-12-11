@@ -13,24 +13,24 @@ import com.bumptech.glide.request.RequestOptions
 import com.bumptech.glide.request.target.Target
 import com.generals.movies.R
 import com.generals.movies.movielist.mvp.model.Movie
-import kotlinx.android.synthetic.main.widget_movie_item.view.*
+import kotlinx.android.synthetic.main.widget_movie_item_mvp.view.*
 
-class MovieAdapter(val movieList: List<Movie>) : RecyclerView.Adapter<MovieAdapter.MovieViewHolder>() {
+class MovieAdapterMVP(val movieList: List<Movie>) : RecyclerView.Adapter<MovieAdapterMVP.MovieViewHolder>() {
 
     override fun getItemCount(): Int {
         return movieList.size
     }
 
-    override fun onBindViewHolder(holder: MovieAdapter.MovieViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: MovieAdapterMVP.MovieViewHolder, position: Int) {
         holder.bind(movieList[position])
     }
 
     override fun onCreateViewHolder(parent: ViewGroup,
-                                    viewType: Int): MovieAdapter.MovieViewHolder {
+                                    viewType: Int): MovieAdapterMVP.MovieViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
-        return MovieAdapter.MovieViewHolder(layoutInflater.inflate(R.layout.widget_movie_item,
-                                                                   parent,
-                                                                   false))
+        return MovieAdapterMVP.MovieViewHolder(layoutInflater.inflate(R.layout.widget_movie_item_mvp,
+                                                                      parent,
+                                                                      false))
     }
 
     class MovieViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -64,6 +64,4 @@ class MovieAdapter(val movieList: List<Movie>) : RecyclerView.Adapter<MovieAdapt
             }
         }
     }
-
-
 }
