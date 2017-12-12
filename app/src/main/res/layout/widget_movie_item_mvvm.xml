@@ -15,25 +15,27 @@
 
         <ImageView
             android:id="@+id/movie_image"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
             android:visibility="visible"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:ignore="ContentDescription"
-            app:url="@{movie.imageUrl}"/>
+            app:url="@{movie.imageUrl}"
+            app:loader="@{imageLoader}"/>
 
         <ProgressBar
             android:id="@+id/image_loader"
-            android:layout_width="30dp"
+            android:layout_width="match_parent"
             android:layout_height="30dp"
             android:layout_gravity="center"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent"
+            android:visibility="gone"/>
 
     </android.support.constraint.ConstraintLayout>
 </layout>
