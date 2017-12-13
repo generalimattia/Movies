@@ -1,4 +1,4 @@
-package com.generals.movies.movielist.mvp.model
+package com.generals.movies.movielist.model
 
 import android.os.Parcel
 import android.os.Parcelable

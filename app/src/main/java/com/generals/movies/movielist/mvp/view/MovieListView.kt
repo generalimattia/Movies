@@ -1,6 +1,6 @@
 package com.generals.movies.movielist.mvp.view
 
-import com.generals.movies.movielist.mvp.model.Movie
+import com.generals.movies.movielist.model.Movie
 
 interface MovieListView {
 

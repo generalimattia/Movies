@@ -6,7 +6,7 @@
     <data>
         <variable
             name="movie"
-            type="com.generals.movies.movielist.mvp.model.Movie"/>
+            type="com.generals.movies.movielist.model.Movie"/>
     </data>
 
     <android.support.constraint.ConstraintLayout

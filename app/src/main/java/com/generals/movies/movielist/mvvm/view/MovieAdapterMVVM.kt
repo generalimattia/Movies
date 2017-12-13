@@ -4,7 +4,7 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import com.generals.movies.databinding.WidgetMovieItemMvvmBinding
-import com.generals.movies.movielist.mvp.model.Movie
+import com.generals.movies.movielist.model.Movie
 
 class MovieAdapterMVVM(val movieList: List<Movie>) : RecyclerView.Adapter<MovieAdapterMVVM.MovieViewHolder>() {
 

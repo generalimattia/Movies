@@ -4,7 +4,7 @@ import android.databinding.BaseObservable
 import android.databinding.ObservableArrayList
 import android.databinding.ObservableInt
 import android.view.View
-import com.generals.movies.movielist.mvp.model.Movie
+import com.generals.movies.movielist.model.Movie
 import io.reactivex.Observable
 import io.reactivex.ObservableEmitter
 import io.reactivex.android.schedulers.AndroidSchedulers

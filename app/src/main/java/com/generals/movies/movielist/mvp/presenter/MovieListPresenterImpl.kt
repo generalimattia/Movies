@@ -1,7 +1,7 @@
 package com.generals.movies.movielist.mvp.presenter
 
 import com.generals.movies.core.mvp.BasePresenter
-import com.generals.movies.movielist.mvp.model.Movie
+import com.generals.movies.movielist.model.Movie
 import com.generals.movies.movielist.mvp.view.MovieListView
 import io.reactivex.Observable
 import io.reactivex.ObservableEmitter

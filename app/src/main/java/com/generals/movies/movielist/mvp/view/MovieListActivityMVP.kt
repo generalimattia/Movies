@@ -7,7 +7,7 @@ import android.view.View
 import android.widget.Toast
 import com.generals.movies.MovieApplication
 import com.generals.movies.R
-import com.generals.movies.movielist.mvp.model.Movie
+import com.generals.movies.movielist.model.Movie
 import com.generals.movies.movielist.mvp.presenter.MovieListPresenter
 import kotlinx.android.synthetic.main.activity_movie_list_mvp.*
 import javax.inject.Inject

@@ -20,8 +20,8 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".movielist.mvp.view.MovieListActivityMVP">
-        </activity>
+        <activity android:name=".movielist.mvp.view.MovieListActivityMVP"/>
+        <activity android:name=".movielist.live.view.MovieListActivityLive"/>
     </application>
 
 </manifest>

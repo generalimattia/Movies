@@ -12,7 +12,7 @@ import com.bumptech.glide.request.RequestListener
 import com.bumptech.glide.request.RequestOptions
 import com.bumptech.glide.request.target.Target
 import com.generals.movies.R
-import com.generals.movies.movielist.mvp.model.Movie
+import com.generals.movies.movielist.model.Movie
 import kotlinx.android.synthetic.main.widget_movie_item_mvp.view.*
 
 class MovieAdapterMVP(val movieList: List<Movie>) : RecyclerView.Adapter<MovieAdapterMVP.MovieViewHolder>() {
