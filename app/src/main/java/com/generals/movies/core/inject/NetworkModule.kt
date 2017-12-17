@@ -1,4 +1,4 @@
-package com.generals.movies.core.dependencyinjection
+package com.generals.movies.core.inject
 
 import dagger.Module
 import dagger.Provides

@@ -6,7 +6,7 @@ apply plugin: 'kotlin-kapt'
 android {
     compileSdkVersion 26
     defaultConfig {
-        applicationId "com.generals.movies"
+        applicationId "com.generals.Movies"
         minSdkVersion 19
         targetSdkVersion 26
         versionCode 1
@@ -45,8 +45,8 @@ dependencies {
     annotationProcessor 'com.github.bumptech.glide:compiler:4.3.1'
     kapt 'com.google.dagger:dagger-compiler:2.13'
 
-    implementation "android.arch.lifecycle:runtime:1.0.3"
     implementation "android.arch.lifecycle:extensions:1.0.0"
+    annotationProcessor "android.arch.lifecycle:compiler:1.0.0"
 }
 repositories {
     mavenCentral()

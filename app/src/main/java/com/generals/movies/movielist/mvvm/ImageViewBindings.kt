@@ -13,7 +13,7 @@ import com.bumptech.glide.request.RequestOptions
 import com.bumptech.glide.request.target.Target
 
 @SuppressWarnings("unchecked")
-@BindingAdapter(*arrayOf("url", "loader"), requireAll = true)
+@BindingAdapter("url", "loader", requireAll = true)
 fun loadImage(imageView: ImageView,
               url: String?,
               loader: ProgressBar) {

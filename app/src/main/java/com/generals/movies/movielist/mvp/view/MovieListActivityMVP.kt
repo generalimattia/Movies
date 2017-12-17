@@ -40,7 +40,7 @@ class MovieListActivityMVP : AppCompatActivity(), MovieListView {
     override fun onError(e: Throwable) {
         movie_list_loader.visibility = View.GONE
         Toast.makeText(this@MovieListActivityMVP,
-                       "Error while downloading movies",
+                       "Error while downloading liveMovies",
                        Toast.LENGTH_LONG).show()
     }
 

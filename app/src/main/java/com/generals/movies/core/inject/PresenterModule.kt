@@ -1,4 +1,4 @@
-package com.generals.movies.core.dependencyinjection
+package com.generals.movies.core.inject
 
 import com.generals.movies.movielist.mvp.presenter.MovieListPresenter
 import com.generals.movies.movielist.mvp.presenter.MovieListPresenterImpl
@@ -11,5 +11,5 @@ class PresenterModule {
 
     @Provides
     @Singleton
-    fun provideMovieService(presenter: MovieListPresenterImpl): MovieListPresenter = presenter
+    fun provideMoviePresenter(presenter: MovieListPresenterImpl): MovieListPresenter = presenter
 }

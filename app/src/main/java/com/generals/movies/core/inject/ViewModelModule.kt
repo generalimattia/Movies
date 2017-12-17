@@ -1,4 +1,4 @@
-package com.generals.movies.core.dependencyinjection
+package com.generals.movies.core.inject
 
 import com.generals.movies.movielist.mvvm.viewmodel.MovieListViewModel
 import com.generals.movies.movielist.mvvm.viewmodel.MovieListViewModelImpl

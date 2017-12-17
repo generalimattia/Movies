@@ -3,13 +3,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".movielist.mvp.view.MovieListActivityMVP">
+    tools:context=".movielist.live.view.MovieListActivityLive">
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/movie_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:listitem="@layout/widget_movie_item_mvp"/>
+        tools:listitem="@layout/widget_movie_item_live"/>
 
     <ProgressBar
         android:id="@+id/movie_list_loader"
